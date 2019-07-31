@@ -11,9 +11,10 @@ Using the `date`, `input`,`multiply` and `pow` components, implement the followi
 
 ### `Input Component`
 It will be in charge of capturing and issuing user data due to the following restrictions:
-* validate that only number is accepted in the input
-* When the data entered is not a number, launch an "alert" informed of the error.
-* the "Reset" button will be able to clean the input.
+* validate that only number is accepted in the input when the data entered is not a number
+  *  Add `is-invalid` class to [input].
+  * show `div.error-message` element and add `invalid-feedback` to it.
+* the "Reset" button will be able to clean the input and also clean validation error is any.
 
 ### `Multiply Component`
 It will receive the value emitted by the `Input Component` and implement the following behaviors:
