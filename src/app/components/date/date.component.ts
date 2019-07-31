@@ -1,14 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-date',
-  templateUrl: './date.component.html',
+    selector: 'app-date',
+    templateUrl: './date.component.html',
 })
 export class ChildDateComponent implements OnInit {
 
-  constructor() { }
+    @Input() public aDate: number;
 
-  ngOnInit() {
-  }
+    public newDate: Date;
+
+    constructor() { }
+
+    ngOnInit() {
+        if (typeof this.aDate !== 'number')
+            this.aDate = null;
+        else
+            this.newDate= new Date(this.aDate);
+    }
 
 }

@@ -9,7 +9,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-8">
-      <app-input></app-input>
+      <app-input (emitValue)="changeValue($event)"></app-input>
     </div>
   </div>
 </div>
@@ -17,13 +17,13 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <app-multiply></app-multiply>
+      <app-multiply [num]="value"></app-multiply>
     </div>
     <div class="col-4">
-      <app-pow></app-pow>
+      <app-pow [num]="value"></app-pow>
     </div>
     <div class="col-4">
-      <app-date></app-date>
+      <app-date [aDate]="value"></app-date>
     </div>
   </div>
 </div>

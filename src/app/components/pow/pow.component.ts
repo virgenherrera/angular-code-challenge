@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-pow',
-  templateUrl: './pow.component.html',
+    selector: 'app-pow',
+    templateUrl: './pow.component.html',
 })
-export class ChildPowComponent implements OnInit {
+export class ChildPowComponent implements OnChanges {
 
-  constructor() { }
+    @Input() public num: string;
+    public value: number;
 
-  ngOnInit() {
-  }
+    constructor() { }
+
+    ngOnChanges() {
+        if (!/[0-9]/.test(this.num))
+            this.value = null;
+        else
+            this.value = parseInt(this.num) ** 2;
+    }
 
 }

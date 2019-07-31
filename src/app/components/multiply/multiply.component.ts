@@ -1,14 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-multiply',
-  templateUrl: './multiply.component.html',
+    selector: 'app-multiply',
+    templateUrl: './multiply.component.html',
 })
-export class ChildMultiplyComponent implements OnInit {
+export class ChildMultiplyComponent implements OnChanges {
 
-  constructor() { }
+    @Input() public num: string;
 
-  ngOnInit() {
-  }
+    public value: number;
+
+    constructor() { }
+
+
+    ngOnChanges() {
+        if (!/[0-9]/.test(this.num))
+            this.value = null;
+        else
+            this.value = parseInt(this.num) * 2;
+    }
 
 }
