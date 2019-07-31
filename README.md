@@ -1,4 +1,4 @@
-# AngularCodeChallenge
+# Angular Code Challenge
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
@@ -6,22 +6,27 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## The Challenge
+Using the `date`, `input`,`multiply` and `pow` components, implement the following behavior:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### `Input Component`
+It will be in charge of capturing and issuing user data due to the following restrictions:
+* validate that only number is accepted in the input
+* When the data entered is not a number, launch an "alert" informed of the error.
+* the "Reset" button will be able to clean the input.
 
-## Build
+### `Multiply Component`
+It will receive the value emitted by the `Input Component` and implement the following behaviors:
+* If the value to be received is not a number, do not draw this component in the DOM.
+* multiply the value received by 2 (n*2) and display it in the component.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+### `Pow Component`:
+It will receive the value issued by the `Input Component` and implement the following behaviors:
+* If the value to be received is not a number, do not draw this component in the DOM.
+* raise the value received by its same value (n ^ n) and display it in the component.v
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### `Date Component`
+Receive the value issued by the `Input Component` and implement the following behaviors:
+* If the value to be received is not a number, do not draw this component in the DOM.
+* convert the received value to a date in the format 'YYYY / MM / DD HH: MM' and display it in the component.
