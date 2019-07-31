@@ -28,6 +28,6 @@ It will receive the value issued by the `Input Component` and implement the foll
 * raise the value received by its same value (n ^ n) and display it in the component.v
 
 ### `Date Component`
-Receive the value issued by the `Input Component` and implement the following behaviors:
+It will receive the value issued by the `Input Component` and implement the following behaviors:
 * If the value to be received is not a number, do not draw this component in the DOM.
 * convert the received value to a date in the format 'YYYY / MM / DD HH: MM' and display it in the component.
