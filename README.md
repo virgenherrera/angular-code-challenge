@@ -30,4 +30,4 @@ It will receive the value issued by the `Input Component` and implement the foll
 ### `Date Component`
 It will receive the value issued by the `Input Component` and implement the following behaviors:
 * If the value to be received is not a number, do not draw this component in the DOM.
-* convert the received value to a date in the format 'YYYY / MM / DD HH: MM' and display it in the component.
+* convert the received value to a date in the format 'ISOString' and display it in the component.
