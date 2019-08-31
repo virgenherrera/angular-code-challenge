@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -12,12 +13,15 @@ import { ChildDateComponent } from './components/date/date.component';
   declarations: [
     AppComponent,
     InputComponent,
+    ChildPowComponent,
+    ChildDateComponent,
     ChildMultiplyComponent,
     ChildPowComponent,
     ChildDateComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
