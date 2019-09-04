@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OperationsService } from '../../operations.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -19,17 +20,16 @@ export class InputComponent implements OnInit {
 
   }
 
-  public readNumber(event){
-    
-    this.number = event.target.value;
+  public readNumber(){            
     this._operationService.setNumber(this.number);    
     this.showErrorClass =  this._operationService.validateType();
   }
 
   public reset(){
     this.showErrorClass = false;
-    this._operationService.setNumber(null);
     this.number = null;
+    this._operationService.setNumber(''); 
+       
   } 
 
 }

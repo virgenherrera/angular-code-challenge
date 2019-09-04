@@ -9,8 +9,9 @@ export class ChildDateComponent implements OnInit {
 
   public result:string;
   constructor(private operationsService: OperationsService) {
+    this.result = this.operationsService.date();
     this.operationsService.dataChanged$.subscribe( ()=>{
-      this.result = this.operationsService.date(this.operationsService._number);
+      this.result = this.operationsService.date();
     });
   }
 

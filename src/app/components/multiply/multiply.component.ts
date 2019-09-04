@@ -9,8 +9,9 @@ export class ChildMultiplyComponent implements OnInit {
 
   public result:number;
   constructor(private operationsService: OperationsService) {
+    this.result = this.operationsService.multiply();
     this.operationsService.dataChanged$.subscribe( ()=>{
-      this.result = this.operationsService.multiply(this.operationsService._number);
+      this.result = this.operationsService.multiply();
     });
     
   }

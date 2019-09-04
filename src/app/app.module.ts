@@ -7,6 +7,7 @@ import { InputComponent } from './components/input/input.component';
 import { ChildMultiplyComponent } from './components/multiply/multiply.component';
 import { ChildPowComponent } from './components/pow/pow.component';
 import { ChildDateComponent } from './components/date/date.component';
+import { FormsModule } from '../../node_modules/@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ChildDateComponent } from './components/date/date.component';
     ChildDateComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

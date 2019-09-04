@@ -16,8 +16,13 @@ export class OperationsService {
    //It will return true if the value is a number
    validateType(): boolean {
     try {     
-      this.isValid = !isNaN(this._number);
-      return this.isValid;
+      if(!this._number){
+        this.isValid = false;        
+      }
+      else{
+        this.isValid = !isNaN(this._number);              
+      } 
+      return this.isValid;     
     } catch (ex) {
       console.log("Here we have an error: ", ex.mesagge);
       return false;
@@ -33,21 +38,37 @@ export class OperationsService {
     this.dataChanged$.next();
   }
 
-  multiply(number):number{
-    this._number = number*2;
-    return this._number;
+  multiply():number{    
+    if(this.isValid){
+      return this._number*2;
+    }
+    else{
+      return 0;
+    }    
   }
 
   getNumber():number{
     return this._number;
   }
 
-  pow(number):number{
-    this._number = number*number;
-    return this._number;
+  pow():number{    
+    if(this.isValid){
+      return this._number*this._number;
+    }
+    else{
+      return 0;
+    }
+
+    
   }
 
-  date(number):string{
-    return new Date(this._number.toString()).toISOString();
+  date():string{
+    if(this.isValid && this._number){
+      return new Date(this._number.toString()).toISOString();
+    }
+    else{
+      return '';
+    }
+    
   }
 }

@@ -8,8 +8,9 @@ import { OperationsService } from 'src/app/operations.service';
 export class ChildPowComponent implements OnInit {
   public result:number;
   constructor(private operationsService: OperationsService) {
+    this.result = this.operationsService.pow();
     this.operationsService.dataChanged$.subscribe( ()=>{
-      this.result = this.operationsService.pow(this.operationsService._number);
+      this.result = this.operationsService.pow();
     });
   }
 
