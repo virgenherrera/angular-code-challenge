@@ -10,7 +10,7 @@ export class InputComponent implements OnInit {
 
   //Properties
   public number:number;
-  public showErrorClass:boolean;
+  public showErrorClass:boolean; 
   constructor(private _operationService:OperationsService) {
     
    }
@@ -19,29 +19,17 @@ export class InputComponent implements OnInit {
 
   }
 
-  public readNumber(){
-    this.showErrorClass =  this.validateType();
+  public readNumber(event){
+    
+    this.number = event.target.value;
+    this._operationService.setNumber(this.number);    
+    this.showErrorClass =  this._operationService.validateType();
   }
 
   public reset(){
     this.showErrorClass = false;
     this._operationService.setNumber(null);
     this.number = null;
-  }
-
-  //It will return true if the value is a number
-  validateType(): boolean {
-    try {
-      let result = false;
-      result = !isNaN(this.number);
-      this._operationService.setNumber(this.number);
-      this._operationService.isValid = result;
-      return result;
-    } catch (ex) {
-      console.log("Here we have an error: ", ex.mesagge);
-      return false;
-
-    }
-  }
+  } 
 
 }

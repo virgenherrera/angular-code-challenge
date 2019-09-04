@@ -11,6 +11,9 @@ export class AppComponent {
 
   public showComponents:boolean = false;
   constructor(public _operationsService:OperationsService){
-    this.showComponents = this._operationsService.isValid;
+    this._operationsService.dataChanged$.subscribe( ()=>{
+      this.showComponents = this._operationsService.isValid;
+    });
+    
   }
 }
