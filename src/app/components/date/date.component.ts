@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OperationsService } from 'src/app/operations.service';
 
 @Component({
   selector: 'app-date',
@@ -6,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildDateComponent implements OnInit {
 
-  constructor() { }
+  public result:string;
+  constructor(private operationsService: OperationsService) {
+    this.result = this.operationsService.date(this.operationsService._number);
+  }
 
   ngOnInit() {
   }

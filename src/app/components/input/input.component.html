@@ -1,11 +1,14 @@
 <div class="input-group mb-3">
   <div class="input-group">
-    <input type="text" class="form-control" placeholder="type your Number">
+    <input type="text" class="form-control" [className]="!showErrorClass?'is-invalid':''" (change)="readNumber()" [ngModel]="number" placeholder="type your Number">
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button">Reset</button>
+      <button class="btn btn-outline-secondary" (click)="reset()" type="button">Reset</button>
     </div>
-    <div class="error-message">
+    <div *ngIf="!showErrorClass" class="error-message">
       Value that you entered is not a number!
+      <div>
+        invalid-feedback
+      </div>
     </div>
   </div>
 </div>

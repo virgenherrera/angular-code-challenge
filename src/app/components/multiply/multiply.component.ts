@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OperationsService } from '../../operations.service';
 
 @Component({
   selector: 'app-multiply',
@@ -6,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildMultiplyComponent implements OnInit {
 
-  constructor() { }
+  public result:number;
+  constructor(private operationsService: OperationsService) {
+    this.result = this.operationsService.multiply(this.operationsService._number);
+  }
 
   ngOnInit() {
   }
