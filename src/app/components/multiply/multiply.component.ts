@@ -1,14 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-multiply',
   templateUrl: './multiply.component.html',
 })
-export class ChildMultiplyComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class ChildMultiplyComponent {
+  @Input('resultValue') protected value: number;
 }

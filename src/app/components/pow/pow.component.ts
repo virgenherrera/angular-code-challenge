@@ -1,14 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-pow',
   templateUrl: './pow.component.html',
 })
-export class ChildPowComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class ChildPowComponent {
+  @Input('resultValue') protected value: number;
 }

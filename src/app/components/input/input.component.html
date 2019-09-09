@@ -1,11 +1,11 @@
 <div class="input-group mb-3">
   <div class="input-group">
-    <input type="text" class="form-control" placeholder="type your Number">
+    <input type="text" class="form-control" (input)="validateData(inputValue)" [ngClass]="{'is-invalid': isInvalid}" placeholder="type your Number" #inputValue>
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button">Reset</button>
+      <button class="btn btn-outline-secondary" type="button" (click)="onResetClick($event, inputValue)">Reset</button>
     </div>
-    <div class="error-message">
-      Value that you entered is not a number!
+    <div class="error-message" *ngIf="isInvalid">
+      {{ invalidFeedbackMessage }}
     </div>
   </div>
 </div>
