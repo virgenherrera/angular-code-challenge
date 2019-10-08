@@ -35,7 +35,7 @@ Will "listen" data issued by `Input Component` and implement the following behav
 Will "listen" data issued by `Input Component` and implement the following behaviors:
 * Take __received value__ as `Date Class constructor argument` to  calculate `date` property.
 * Show `date` in component's view.
-* Apply pipe to `date` in order to show `date` like in this example: "__Friday February 07 1986 AD__".
+* Apply pipe to `date` in order to show `date` like in this example: "__Friday February 07 1986__".
 
 ## App level Requirement
 * Do not show `Multiply`, `Pow` nor `Date` Components When invalid data is issued by `Input Component`.
