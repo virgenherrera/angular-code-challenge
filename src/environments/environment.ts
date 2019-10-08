@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  multiplier: 556,
+  multiplicand: 556,
   exponent: 95,
 };
 
