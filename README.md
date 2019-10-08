@@ -1,33 +1,32 @@
 # Angular Code Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
 ## The Challenge
-Using the `date`, `input`,`multiply` and `pow` components, implement the following behavior:
+Using the `date`, `input`, `multiply` and `pow` components, implement the following behaviors:
 
-### `Input Component`
-It will be in charge of capturing and issuing user data due to the following restrictions:
-* validate that only number is accepted in the input when the data entered is not a number
-  *  Add `is-invalid` class to [input].
-  * show `div.error-message` element and add `invalid-feedback` to it.
-* the "Reset" button will be able to clean the input and also clean validation error is any.
+### Input Component
+The `Input Component` must __Validate__ (positive Integers only) user captured data as well implement the following behaviors:
+* When the data entered __is valid__:
+    * __Emit__ Value to subscribers.
+* When the data entered is __NOT a positive Integer__
+    * __Emit__ `null` to subscribers.
+    * Add `is-invalid` class to __[input]__.
+    * Add `invalid-feedback` to __div .error-message__.
+* The "Reset" button __onClick__ must:
+    * __Emit__ `null` to subscribers.
+    * Clean the input __value__ as well any validation errors by removing `is-invalid` and `invalid-feedback` Classes from it's dom nodes.
 
-### `Multiply Component`
-It will receive the value emitted by the `Input Component` and implement the following behaviors:
-* If the value to be received is not a number, do not draw this component in the DOM.
-* multiply the value received by 2 (n*2) and display it in the component.
+### Multiply Component
+Will listen data issued by `Input Component` and implement the following behaviors:
+* Take __received value as multiplier__ and  __environment.multiplier as multiplicand__ to  calculate `factor` property.
+* Show `factor` in component's view.
 
+### Pow Component
+Will listen data issued by `Input Component` and implement the following behaviors:
+* Take __received value as base__ and  __environment.exponent as exponent__ to  calculate `power` property.
+* Show `power` in component's view.
 
-### `Pow Component`:
-It will receive the value issued by the `Input Component` and implement the following behaviors:
-* If the value to be received is not a number, do not draw this component in the DOM.
-* raise the value received by its same value (n ^ n) and display it in the component.v
-
-### `Date Component`
-It will receive the value issued by the `Input Component` and implement the following behaviors:
-* If the value to be received is not a number, do not draw this component in the DOM.
-* convert the received value to a date in the format 'ISOString' and display it in the component.
+### Date Component
+Will listen data issued by `Input Component` and implement the following behaviors:
+* Take __received value__ as `Date Class constructor argument` to  calculate `date` property.
+* Show `date` in component's view.
+* Apply pipe to `date` in order to show `date` like in this example: "__Friday February 07 1986 AD__".
