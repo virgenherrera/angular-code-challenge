@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  multiplicand: 100,
+  exponent: 77,
 };

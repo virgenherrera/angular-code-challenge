@@ -1,33 +1,45 @@
-# Angular Code Challenge
+# Angular L2 Code Challenge
+Using the `date`, `input`, `multiply` and `pow` components, implement the following behaviors:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+## Input Component
+The `Input Component` must __Validate__ (positive Integers only) user captured data as well implement the following behaviors:
+* When the data entered __is valid__:
+    * __Emit__ Value to subscribers.
+* When the data entered is __NOT a positive Integer__
+    * __Emit__ `null` to subscribers.
+    * Add `is-invalid` class to __[input]__.
+    * Add `invalid-feedback` to __div .error-message__.
+* The "Reset" button __onClick__ must:
+    * __Emit__ `null` to subscribers.
+    * Clean the input __value__ as well any validation errors by removing `is-invalid` and `invalid-feedback` Classes from it's dom nodes.
 
-## Development server
+## Multiply Component
+Will "listen" data issued by `Input Component` and implement the following behaviors:
+* Assign `multiplicand` property from `environment.multiplicand`.
+* Assign `multiplier` property from received value.
+* Take __multiplier__ and  __multiplicand__ property to  calculate `factor` property.
+* Show `multiplicand` in component's view.
+* Show `multiplier` in component's view.
+* Show `factor` in component's view.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Pow Component
+Will "listen" data issued by `Input Component` and implement the following behaviors:
+* Assign `exponent` property from `environment.exponent`.
+* Assign `base` property from received value.
+* Take __base__ and  __exponent__ to  calculate `power` property.
+* Show `base` in component's view.
+* Show `exponent` in component's view.
+* Show `power` in component's view.
 
-## The Challenge
-Using the `date`, `input`,`multiply` and `pow` components, implement the following behavior:
+## Date Component
+Will "listen" data issued by `Input Component` and implement the following behaviors:
+* Take __received value__ as `Date Class constructor argument` to  calculate `date` property.
+* Show `date` in component's view.
+* Apply pipe to `date` in order to show `date` like in this example: "__Friday February 07 1986__".
 
-### `Input Component`
-It will be in charge of capturing and issuing user data due to the following restrictions:
-* validate that only number is accepted in the input when the data entered is not a number
-  *  Add `is-invalid` class to [input].
-  * show `div.error-message` element and add `invalid-feedback` to it.
-* the "Reset" button will be able to clean the input and also clean validation error is any.
+## App level Requirement
+* Do not show `Multiply`, `Pow` nor `Date` Components When invalid data is issued by `Input Component`.
 
-### `Multiply Component`
-It will receive the value emitted by the `Input Component` and implement the following behaviors:
-* If the value to be received is not a number, do not draw this component in the DOM.
-* multiply the value received by 2 (n*2) and display it in the component.
-
-
-### `Pow Component`:
-It will receive the value issued by the `Input Component` and implement the following behaviors:
-* If the value to be received is not a number, do not draw this component in the DOM.
-* raise the value received by its same value (n ^ n) and display it in the component.v
-
-### `Date Component`
-It will receive the value issued by the `Input Component` and implement the following behaviors:
-* If the value to be received is not a number, do not draw this component in the DOM.
-* convert the received value to a date in the format 'ISOString' and display it in the component.
+## Extra Points
+* Create a __pull request__ from your __own fork__ of this (already answered) challenge to [original](https://github.com/virgenherrera/angular-code-challenge) repository.
+* Publish this (already answered) challenge as __GitHub page__ in your own fork.
