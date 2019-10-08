@@ -1,4 +1,4 @@
-# Angular LV2 Code Challenge
+# Angular L2 Code Challenge
 Using the `date`, `input`, `multiply` and `pow` components, implement the following behaviors:
 
 ## Input Component
