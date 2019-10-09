@@ -33,9 +33,10 @@ The `Input Component` must "listen" and implement the following behaviors:
 
 ## Date Component
 The `Input Component` must "listen" and implement the following behaviors:
+* Declare `format` property with a proper format to match desired __date Format__ (e.g. "__Friday February 07 1986__").
 * Take __received value__ as `Date Class constructor argument` to  calculate `date` property.
-* Show `date` in component's view.
-* Apply pipe to `date` in order to show `date` like in this example: "__Friday February 07 1986__".
+* Show `format` in component's view.
+* Show `date` in component's view and apply date format from `format` property.
 
 ## App level Requirement
 * Do not show `Multiply`, `Pow` nor `Date` Components When invalid data is issued by `Input Component`.
