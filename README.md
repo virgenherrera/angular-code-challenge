@@ -14,7 +14,7 @@ The `Input Component` must __Validate__ (positive Integers only) user captured d
     * Clean the input __value__ as well any validation errors by removing `is-invalid` and `invalid-feedback` Classes from it's dom nodes.
 
 ## Multiply Component
-Will "listen" data issued by `Input Component` and implement the following behaviors:
+The `Input Component` must "listen" and implement the following behaviors:
 * Assign `multiplicand` property from `environment.multiplicand`.
 * Assign `multiplier` property from received value.
 * Take __multiplier__ and  __multiplicand__ property to  calculate `factor` property.
@@ -23,7 +23,7 @@ Will "listen" data issued by `Input Component` and implement the following behav
 * Show `factor` in component's view.
 
 ## Pow Component
-Will "listen" data issued by `Input Component` and implement the following behaviors:
+The `Input Component` must "listen" and implement the following behaviors:
 * Assign `exponent` property from `environment.exponent`.
 * Assign `base` property from received value.
 * Take __base__ and  __exponent__ to  calculate `power` property.
@@ -32,7 +32,7 @@ Will "listen" data issued by `Input Component` and implement the following behav
 * Show `power` in component's view.
 
 ## Date Component
-Will "listen" data issued by `Input Component` and implement the following behaviors:
+The `Input Component` must "listen" and implement the following behaviors:
 * Take __received value__ as `Date Class constructor argument` to  calculate `date` property.
 * Show `date` in component's view.
 * Apply pipe to `date` in order to show `date` like in this example: "__Friday February 07 1986__".
